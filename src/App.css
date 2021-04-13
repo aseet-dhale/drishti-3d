@@ -1,38 +1,110 @@
-.App {
-  text-align: center;
+#comp-model {
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#landing-main {
+  position: absolute;
   display: flex;
   flex-direction: column;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-around;
   align-items: center;
+  background-color: #333;
+}
+
+#landing-head {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 5em;
+  color: #57cbcc;
+  text-align: center;
+  margin: 5px;
+  letter-spacing: -0.1em;
+}
+
+#landing-button {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+#landing-button button {
+  margin: 15px;
+  padding: 10px;
+  width: 120px;
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #57cbcc;
+  border-radius: 50px;
+  background: #333333;
+  box-shadow: 2px 2px 6px #2b2b2b,
+            -2px -2px 6px #3b3b3b;
+}
+
+#landing-instructions {
+  background-color: rgba(87, 203, 204, 1);
+  margin: 5px;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px 5px 0px;
+  color: #333;
+}
+
+#landing-instructions div{
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+#landing-instructions div p {
+  margin: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#landing-instructions div svg {
+  margin: 2px;
+  fill: #333;
+}
+
+#landing-button button:hover {
+  border: 1px solid #57cbcc;
+}
+
+#landing-toggle {
+  display: none;
+  position: absolute;
+  z-index: 5;
+  padding: 10px;
+  margin: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  #landing-head {
+    font-size: 3.5em;
   }
-  to {
-    transform: rotate(360deg);
+
+  #landing-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  #landing-button button {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #landing-head {
+    font-size: 2.75em;
+  }
+  #landing-instructions div p {
+    font-size: small;
+  }
+  #landing-instructions div svg {
+    transform: scale(0.5);
   }
 }
