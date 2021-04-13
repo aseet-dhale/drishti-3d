@@ -1,0 +1,30 @@
+{
+  "files": {
+    "static/js/0.c39aac44.chunk.js": "/drishti-3d/static/js/0.c39aac44.chunk.js",
+    "static/js/0.c39aac44.chunk.js.map": "/drishti-3d/static/js/0.c39aac44.chunk.js.map",
+    "main.css": "/drishti-3d/static/css/main.99f19b98.chunk.css",
+    "main.js": "/drishti-3d/static/js/main.b4bd460f.chunk.js",
+    "main.js.map": "/drishti-3d/static/js/main.b4bd460f.chunk.js.map",
+    "runtime-main.js": "/drishti-3d/static/js/runtime-main.74c15e5d.js",
+    "runtime-main.js.map": "/drishti-3d/static/js/runtime-main.74c15e5d.js.map",
+    "static/js/3.2a1f539c.chunk.js": "/drishti-3d/static/js/3.2a1f539c.chunk.js",
+    "static/js/3.2a1f539c.chunk.js.map": "/drishti-3d/static/js/3.2a1f539c.chunk.js.map",
+    "static/js/4.8db01933.chunk.js": "/drishti-3d/static/js/4.8db01933.chunk.js",
+    "static/js/4.8db01933.chunk.js.map": "/drishti-3d/static/js/4.8db01933.chunk.js.map",
+    "static/js/5.0f4b8eda.chunk.js": "/drishti-3d/static/js/5.0f4b8eda.chunk.js",
+    "static/js/5.0f4b8eda.chunk.js.map": "/drishti-3d/static/js/5.0f4b8eda.chunk.js.map",
+    "static/js/6.e2acb7e4.chunk.js": "/drishti-3d/static/js/6.e2acb7e4.chunk.js",
+    "static/js/6.e2acb7e4.chunk.js.map": "/drishti-3d/static/js/6.e2acb7e4.chunk.js.map",
+    "static/js/7.518c74bf.chunk.js": "/drishti-3d/static/js/7.518c74bf.chunk.js",
+    "static/js/7.518c74bf.chunk.js.map": "/drishti-3d/static/js/7.518c74bf.chunk.js.map",
+    "index.html": "/drishti-3d/index.html",
+    "static/css/main.99f19b98.chunk.css.map": "/drishti-3d/static/css/main.99f19b98.chunk.css.map",
+    "static/js/3.2a1f539c.chunk.js.LICENSE.txt": "/drishti-3d/static/js/3.2a1f539c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74c15e5d.js",
+    "static/js/3.2a1f539c.chunk.js",
+    "static/css/main.99f19b98.chunk.css",
+    "static/js/main.b4bd460f.chunk.js"
+  ]
+}
