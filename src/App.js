@@ -4,7 +4,7 @@ import CompModel from './components/CompModel';
 
 const AB_2 = "AB_2";
 const AB_3 = "AB_3";
-const Test_3 = "Test_3";
+const TEST_3 = "TEST_3";
 
 function App() {
   const [model, selectModel] = useState(AB_2);
@@ -27,10 +27,9 @@ function App() {
           <p>Drishti Exhibition 2021</p>
         </div>
         <div id="landing-button">
-          <button onClick={() => { selectModel(AB_2); closeLanding(); }} >AB 1</button>
           <button onClick={() => { selectModel(AB_2); closeLanding(); }} >AB 2</button>
-          <button onClick={() => { selectModel(Test_3); closeLanding(); }} >TEST 3</button>
-          {/* <button onClick={() => { selectModel(Test_3); closeLanding(); }} >AB 4</button> */}
+          <button onClick={() => { selectModel(AB_3); closeLanding(); }} >AB 3</button>
+          <button onClick={() => { selectModel(TEST_3); closeLanding(); }} >TEST 3</button>
         </div>
         <div id="landing-instructions">
           <div>

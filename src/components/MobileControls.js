@@ -1,28 +1,23 @@
-import { OrbitControls, OrthographicCamera, PerspectiveCamera, Text } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { OrbitControls, Text } from "@react-three/drei";
+import { useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
-import * as THREE from 'three';
-
-
 
 var loadedModel;
-
 export default function MobileControls(props) {
     const { gl, camera } = useThree();
     const meshref = useRef();
     useEffect(() => {
-        camera.position.x = 0;
-        camera.position.y = 1;
-        camera.position.z = 1.5;
-    });
-    useEffect(() => {
         if (loadedModel && loadedModel !== props.model) {
             camera.position.x = 0;
-            props.model === "Test_3" ? camera.position.y = 0: camera.position.y = 1;
+            if (props.model === "TEST_3") { camera.position.y = 0; camera.position.z = 0.5; }
+            else { camera.position.y = 1; camera.position.z = 1.5; }
+        } else {
+            camera.position.x = 0;
+            camera.position.y = 1;
             camera.position.z = 1.5;
         }
         loadedModel = props.model;
-    }, [props.model]);
+    });
     return (
         <>
             <OrbitControls
