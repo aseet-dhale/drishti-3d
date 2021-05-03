@@ -1,14 +1,14 @@
 import React from "react";
 import { isMobile } from "react-device-detect";
 import ErrorBoundary from "./ErrorBoundary";
-const AB_2 = React.lazy(() => import('../assets/Models/AB_2.js'));
-const AB_3 = React.lazy(() => import('../assets/Models/AB_3.js'));
-const AB_4 = React.lazy(() => import('../assets/Models/AB_4.js'));
-const AB_Extra = React.lazy(() => import('../assets/Models/AB_Extra.js'));
-const AB_2_mobile = React.lazy(() => import('../assets/Models/AB_2_mobile.js'));
-const AB_3_mobile = React.lazy(() => import('../assets/Models/AB_3_mobile.js'));
-const AB_4_mobile = React.lazy(() => import('../assets/Models/AB_4_mobile.js'));
-const AB_Extra_mobile = React.lazy(() => import('../assets/Models/AB_Extra_mobile.js'));
+const AB_2 = React.lazy(() => import('./Models/AB_2.js'));
+const AB_3 = React.lazy(() => import('./Models/AB_3.js'));
+const AB_4 = React.lazy(() => import('./Models/AB_4.js'));
+const AB_Extra = React.lazy(() => import('./Models/AB_Extra.js'));
+const AB_2_mobile = React.lazy(() => import('./Models/AB_2_mobile.js'));
+const AB_3_mobile = React.lazy(() => import('./Models/AB_3_mobile.js'));
+const AB_4_mobile = React.lazy(() => import('./Models/AB_4_mobile.js'));
+const AB_Extra_mobile = React.lazy(() => import('./Models/AB_Extra_mobile.js'));
 
 
 const Asset = (props) => {
