@@ -1,6 +1,6 @@
 import { OrbitControls} from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 var loadedModel;
 export default function MobileControls(props) {
