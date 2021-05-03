@@ -75,11 +75,13 @@ export default function DesktopControls(props) {
                 landingToggle.style.display = "none";
             })
         }
-        camera.position.x = camera.position.y = camera.position.z = 0;
+        camera.position.x = camera.position.z = 0;
+        camera.position.y = 0.5;
     })
     useEffect(() => {
         if (loadedModel && loadedModel !== props.model) {
             camera.position.x = camera.position.y = camera.position.z = 0;
+            camera.position.y = 0.5;
         }
         loadedModel = props.model;
     });

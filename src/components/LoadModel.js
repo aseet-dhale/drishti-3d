@@ -1,13 +1,33 @@
 import React from "react";
+import { isMobile } from "react-device-detect";
 import ErrorBoundary from "./ErrorBoundary";
-const AB_2 = React.lazy(() => import('../assets/AB_2.js'));
-const AB_3 = React.lazy(() => import('../assets/AB_3.js'));
-const TEST_3 = React.lazy(() => import('../assets/TEST_3.js'));
+const AB_2 = React.lazy(() => import('../assets/Models/AB_2.js'));
+const AB_3 = React.lazy(() => import('../assets/Models/AB_3.js'));
+const AB_4 = React.lazy(() => import('../assets/Models/AB_4.js'));
+const AB_Extra = React.lazy(() => import('../assets/Models/AB_Extra.js'));
+const AB_2_mobile = React.lazy(() => import('../assets/Models/AB_2_mobile.js'));
+const AB_3_mobile = React.lazy(() => import('../assets/Models/AB_3_mobile.js'));
+const AB_4_mobile = React.lazy(() => import('../assets/Models/AB_4_mobile.js'));
+const AB_Extra_mobile = React.lazy(() => import('../assets/Models/AB_Extra_mobile.js'));
+
 
 const Asset = (props) => {
-    if (props.model === "AB_2") return <AB_2 />;
-    else if (props.model === "AB_3") return <AB_3 />;
-    else if (props.model === "TEST_3") return <TEST_3 />;
+    if (props.model === "AB_2" ){
+        if(isMobile) return <AB_2_mobile />;
+        return <AB_2 />;
+    }
+    else if (props.model === "AB_3"){
+        if(isMobile) return <AB_3_mobile />;
+        return <AB_3 />;
+    }
+    else if (props.model === "AB_4") {
+        if(isMobile) return <AB_4_mobile />;
+        return <AB_4 />;
+    }
+    else if (props.model === "AB_Extra") {
+        if(isMobile) return <AB_Extra_mobile />;
+        return <AB_Extra />;
+    }
 }
 
 export default function LoadModel(props) {
