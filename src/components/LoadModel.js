@@ -1,33 +1,18 @@
 import React from "react";
-import { isMobile } from "react-device-detect";
 import ErrorBoundary from "./ErrorBoundary";
-const AB_2 = React.lazy(() => import('./Models/AB_2.js'));
-const AB_3 = React.lazy(() => import('./Models/AB_3.js'));
-const AB_4 = React.lazy(() => import('./Models/AB_4.js'));
-const AB_EXTRA = React.lazy(() => import('./Models/AB_Extra.js'));
-const AB_2_MOBILE = React.lazy(() => import('./Models/AB_2_mobile.js'));
-const AB_3_MOBILE = React.lazy(() => import('./Models/AB_3_mobile.js'));
-const AB_4_MOBILE = React.lazy(() => import('./Models/AB_4_mobile.js'));
-const AB_EXTRA_MOBILE = React.lazy(() => import('./Models/AB_Extra_mobile.js'));
-
+const BAKED_1 = React.lazy(() => import('./Models/Baked_1.js'));
+const BAKED_2 = React.lazy(() => import('./Models/Baked_2.js'));
+const BAKED_3 = React.lazy(() => import('./Models/Baked_3.js'));
+const BAKED_4 = React.lazy(() => import('./Models/Baked_4.js'));
+// const Robot = React.lazy(() => import('./Models/TEST_1.js'));
 
 const Asset = (props) => {
-    if (props.model === "AB_2" ){
-        if(isMobile) return <AB_2_MOBILE />;
-        return <AB_2 />;
-    }
-    else if (props.model === "AB_3"){
-        if(isMobile) return <AB_3_MOBILE />;
-        return <AB_3 />;
-    }
-    else if (props.model === "AB_4") {
-        if(isMobile) return <AB_4_MOBILE />;
-        return <AB_4 />;
-    }
-    else if (props.model === "AB_Extra") {
-        if(isMobile) return <AB_EXTRA_MOBILE />;
-        return <AB_EXTRA />;
-    }
+    let out = null;
+    if (props.model === "Baked_1") out = <mesh rotation={[Math.PI / 2, 0, 0]} name={props.model}><BAKED_1 /></mesh>;
+    else if (props.model === "Baked_2") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_2 /></mesh>;
+    else if (props.model === "Baked_3") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_3 /></mesh>;
+    else if (props.model === "Baked_4") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_4 /></mesh>;
+    return out;
 }
 
 export default function LoadModel(props) {
