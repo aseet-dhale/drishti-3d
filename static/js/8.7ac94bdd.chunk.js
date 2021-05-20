@@ -1,2 +1,0 @@
-(this["webpackJsonpdrishti-3d"]=this["webpackJsonpdrishti-3d"]||[]).push([[8],{68:function(e,t,r){"use strict";r.r(t),r.d(t,"default",(function(){return i}));var s=r(7),a=r(6),n=r(75),c=r(11);function i(e){var t=Object(a.useRef)(),r=Object(n.a)("AB_4.glb"),i=r.nodes,b=r.materials;return Object(c.jsx)("group",Object(s.a)(Object(s.a)({ref:t},e),{},{dispose:null,children:Object(c.jsx)("group",{name:"Scene",children:Object(c.jsx)("mesh",{name:"AB_4",geometry:i.AB_4.geometry,material:b.ab_4})})}))}n.a.preload("AB_4.glb")}}]);
-//# sourceMappingURL=8.7ac94bdd.chunk.js.map
