@@ -103,6 +103,7 @@ export default function MobileControls(props) {
                 screenSpacePanning={false}
                 maxDistance={500}
                 enableZoom={false}
+                rotateSpeed={0.25}
                 minPolarAngle={Math.PI / 2}
                 maxPolarAngle={Math.PI / 2}
             />

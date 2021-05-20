@@ -61,7 +61,7 @@ function App() {
           </span>
         </div>
       </div>
-      {true ? (
+      {isMobile ? (
         <div id="mobile-controls">
           <div>
             <button id="but_up">
