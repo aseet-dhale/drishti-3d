@@ -9,6 +9,7 @@ import MobileControls from './MobileControls';
 import Raleway from '../assets/Josefin Sans_Bold.json';
 import { DirectionalLightHelper, HemisphereLightHelper, PointLightHelper, SpotLightHelper } from 'three';
 import Text_Texture from '../assets/text_texture_3.webp';
+import { Leva } from 'leva';
 // import Roof_Texture from '../assets/roofTexture.png';
 
 const FogAndLights = () => {
@@ -198,6 +199,7 @@ export default function CompModel(props) {
                 {/* <MobileControls model={props.model} /> */}
             </Canvas>
             <Loader />
+            <Leva />
         </>
     );
 }

@@ -1,5 +1,6 @@
 import { OrbitControls, useProgress } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
+import { useControls } from "leva";
 import { useEffect, useRef } from "react";
 import * as THREE from 'three';
 
@@ -16,6 +17,9 @@ export default function MobileControls(props) {
     const { gl, camera, scene } = useThree();
     const { progress } = useProgress();
     const ref = useRef();
+    const controls = useControls("Rotate Speed : ", {
+        rotateSpeed: 1,
+    });
     const mouseUp = (e) => {
         switch (e.path[0].id) {
             case "but_up":
@@ -103,7 +107,7 @@ export default function MobileControls(props) {
                 screenSpacePanning={false}
                 maxDistance={500}
                 enableZoom={false}
-                rotateSpeed={0.25}
+                rotateSpeed={controls.rotateSpeed}
                 minPolarAngle={Math.PI / 2}
                 maxPolarAngle={Math.PI / 2}
             />
