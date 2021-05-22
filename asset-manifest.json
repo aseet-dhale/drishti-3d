@@ -2,13 +2,13 @@
   "files": {
     "static/js/0.346221a6.chunk.js": "/drishti-3d/static/js/0.346221a6.chunk.js",
     "static/js/0.346221a6.chunk.js.map": "/drishti-3d/static/js/0.346221a6.chunk.js.map",
-    "main.css": "/drishti-3d/static/css/main.405b76bc.chunk.css",
-    "main.js": "/drishti-3d/static/js/main.a635000b.chunk.js",
-    "main.js.map": "/drishti-3d/static/js/main.a635000b.chunk.js.map",
+    "main.css": "/drishti-3d/static/css/main.40d59d7a.chunk.css",
+    "main.js": "/drishti-3d/static/js/main.d22a9729.chunk.js",
+    "main.js.map": "/drishti-3d/static/js/main.d22a9729.chunk.js.map",
     "runtime-main.js": "/drishti-3d/static/js/runtime-main.47ae1624.js",
     "runtime-main.js.map": "/drishti-3d/static/js/runtime-main.47ae1624.js.map",
-    "static/js/3.53a34a78.chunk.js": "/drishti-3d/static/js/3.53a34a78.chunk.js",
-    "static/js/3.53a34a78.chunk.js.map": "/drishti-3d/static/js/3.53a34a78.chunk.js.map",
+    "static/js/3.e6c286a9.chunk.js": "/drishti-3d/static/js/3.e6c286a9.chunk.js",
+    "static/js/3.e6c286a9.chunk.js.map": "/drishti-3d/static/js/3.e6c286a9.chunk.js.map",
     "static/js/4.cd528c06.chunk.js": "/drishti-3d/static/js/4.cd528c06.chunk.js",
     "static/js/4.cd528c06.chunk.js.map": "/drishti-3d/static/js/4.cd528c06.chunk.js.map",
     "static/js/5.d788151e.chunk.js": "/drishti-3d/static/js/5.d788151e.chunk.js",
@@ -20,16 +20,14 @@
     "static/js/8.1332332d.chunk.js": "/drishti-3d/static/js/8.1332332d.chunk.js",
     "static/js/8.1332332d.chunk.js.map": "/drishti-3d/static/js/8.1332332d.chunk.js.map",
     "index.html": "/drishti-3d/index.html",
-    "static/css/main.405b76bc.chunk.css.map": "/drishti-3d/static/css/main.405b76bc.chunk.css.map",
-    "static/js/3.53a34a78.chunk.js.LICENSE.txt": "/drishti-3d/static/js/3.53a34a78.chunk.js.LICENSE.txt",
-    "static/media/Instructions-ESC.ffcc984b.svg": "/drishti-3d/static/media/Instructions-ESC.ffcc984b.svg",
-    "static/media/App.css": "/drishti-3d/static/media/back.efa3603a.webp",
-    "static/media/text_texture_3.3c666f83.webp": "/drishti-3d/static/media/text_texture_3.3c666f83.webp"
+    "static/css/main.40d59d7a.chunk.css.map": "/drishti-3d/static/css/main.40d59d7a.chunk.css.map",
+    "static/js/3.e6c286a9.chunk.js.LICENSE.txt": "/drishti-3d/static/js/3.e6c286a9.chunk.js.LICENSE.txt",
+    "static/media/text_texture_11.a4168d26.jpg": "/drishti-3d/static/media/text_texture_11.a4168d26.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.47ae1624.js",
-    "static/js/3.53a34a78.chunk.js",
-    "static/css/main.405b76bc.chunk.css",
-    "static/js/main.a635000b.chunk.js"
+    "static/js/3.e6c286a9.chunk.js",
+    "static/css/main.40d59d7a.chunk.css",
+    "static/js/main.d22a9729.chunk.js"
   ]
 }
