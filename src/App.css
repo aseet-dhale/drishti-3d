@@ -2,7 +2,6 @@
   --theme_color: #ffffff;
 }
 
-
 #comp-model {
   width: 100vw;
   height: 100vh;
@@ -17,22 +16,32 @@
   height: 100vh;
   justify-content: space-around;
   align-items: center;
-  /* background-color: #333; */
-  background: url('./assets/back.webp');
+  background-color: none;
+  backdrop-filter: blur(10px);
+  /* background: url('./assets/back.webp');
   background-repeat: no-repeat;
   background-size: cover;
   background-blend-mode: color;
-  background-position: center;
+  background-position: center; */
 }
 
 #landing-head {
   width: 100%;
-  font-family: 'Josefin Sans', sans-serif;
-  font-size: 5em;
-  color: var(--theme_color);
   text-align: center;
   margin: 5px;
-  letter-spacing: -0.1em;
+}
+
+#landing-head-drishti {
+  font-family: 'Mountains of Christmas', cursive;
+  color: #fff59d;
+  font-size: 7em;
+  letter-spacing: 0.5ch;
+}
+
+#landing-head-exhb {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 5em;
+  color: rgb(255, 255, 255);
 }
 
 #landing-button {
@@ -46,9 +55,9 @@
   padding: 10px;
   width: 120px;
   border: none;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Heebo', sans-serif;
   color: var(--theme_color);
-  border-radius: 50px;
+  /* border-radius: 50px; */
   background: #000000;
 }
 
@@ -81,7 +90,8 @@
 }
 
 #landing-button button:hover {
-  border: 1px solid #57cbcc;
+  border: 2px solid #fff59d;
+  margin: 13px;
 }
 
 #landing-toggle {
@@ -92,39 +102,101 @@
   margin: 10px;
 }
 
-#landing-toggle svg{
+#landing-toggle svg {
   fill: white;
   width: 30px;
   height: 30px;
 }
 
-#desktop-esc {
+#parent-container {
   position: absolute;
-  bottom: 0;
-  margin: 2em;
   z-index: 10;
-  text-align: center;
+  bottom: 0;
   display: none;
   flex-direction: row;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  color: white;
 }
 
-#desktop-esc div{
-  position: relative;
-  margin: auto;
+.movement-text-small {
+  text-align: center;
+  width: 100%;
+  font-size: smaller;
+}
+
+.child-container-helper {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.child-container-movement {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.grand-child-helper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 }
 
-#desktop-esc img {
-  width: 50px;
-  height: 50px;
+.grand-child-movement {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
 }
 
-#desktop-esc span {
+.movement-keys {
+  height: 30px;
+  width: 30px;
+  border: solid 2.5px white;
+  padding: 15px;
+  margin: 2.5px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.movement-keys-small {
+  height: 30px;
+  width: 30px;
+  border: solid 2.5px white;
+  padding: 8px;
+  margin: 12px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.helper-icons {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  border: solid 2.5px white;
+  padding: 15px;
+  margin: 5px;
+  font-weight: bolder;
+  justify-content: center;
+  border-radius: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.helper-text-small {
   font-size: smaller;
-  color: #ffffff;
 }
 
 #mobile-controls {
@@ -138,9 +210,9 @@
   align-items: center;
 }
 
-#mobile-controls button{
+#mobile-controls button {
   height: 30px;
-  width:  30px;
+  width: 30px;
   margin: 0.5em;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 6px;
@@ -148,20 +220,24 @@
   backdrop-filter: blur(5px);
 }
 
-#mobile-controls svg{
+#mobile-controls svg {
   fill: white;
   pointer-events: none;
 }
 
-#mobile-controls span{
+#mobile-controls span {
   color: #ffffff;
   font-size: 1em;
   font-weight: bolder;
 }
 
-@media screen and (max-width: 600px) {
-  #landing-head {
-    font-size: 3.5em;
+@media screen and (max-width: 700px) {
+  #landing-head-drishti {
+    font-size: 5em;
+  }
+
+  #landing-head-exhb {
+    font-size: 3em;
   }
 
   #landing-button {
@@ -177,8 +253,12 @@
 }
 
 @media screen and (max-width: 400px) {
-  #landing-head {
-    font-size: 2.75em;
+  #landing-head-drishti {
+    font-size: 3.5em;
+  }
+
+  #landing-head-exhb {
+    font-size: 2em;
   }
 
   #landing-instructions div p {

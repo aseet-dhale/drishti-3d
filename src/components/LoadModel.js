@@ -21,6 +21,12 @@ export default function LoadModel(props) {
             <ErrorBoundary>
                 <Asset model={props.model} />
             </ErrorBoundary>
+            {/* <mesh position={[-3.3,0,0]} scale={[0.25,0.25,0.25]}>
+                <Robot />
+            </mesh>
+            <mesh position={[3.3,0,0]} scale={[0.25,0.25,0.25]}>
+                <Robot />
+            </mesh> */}
         </React.Suspense>
     );
 }

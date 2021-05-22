@@ -47,6 +47,9 @@ export default function DesktopControls(props) {
             case 'KeyQ':
                 moveDown = true;
                 break;
+            case 'KeyR':
+                resetCam();
+                break;
             default:
                 break;
         }
@@ -79,22 +82,29 @@ export default function DesktopControls(props) {
                 break;
         }
     };
+
+    const resetCam = () => {
+        if(ref.current){
+            console.log(ref.current);
+            camera.position.set(0,1.25,6.5);
+        }
+    }
     useEffect(() => {
         document.addEventListener('keydown', onKeyDown);
         document.addEventListener('keyup', onKeyUp);
         if (ref.current) {
             const landingMain = document.getElementById("landing-main");
             const landingToggle = document.getElementById("landing-toggle");
-            const desktopEsc = document.getElementById("desktop-esc");
+            const pc = document.getElementById("parent-container");
             ref.current.addEventListener('lock', function () {
                 landingMain.style.display = "none";
                 landingToggle.style.display = "none";
-                desktopEsc.style.display = "flex";
+                pc.style.display = "flex";
             })
             ref.current.addEventListener('unlock', function () {
                 landingMain.style.display = "flex";
                 landingToggle.style.display = "none";
-                desktopEsc.style.display = "none";
+                pc.style.display = "none";
             })
         }
         camera.position.x = 0;

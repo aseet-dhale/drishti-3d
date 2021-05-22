@@ -8,8 +8,7 @@ import LoadModel from './LoadModel';
 import MobileControls from './MobileControls';
 import Raleway from '../assets/Josefin Sans_Bold.json';
 import { DirectionalLightHelper, HemisphereLightHelper, PointLightHelper, SpotLightHelper } from 'three';
-import Text_Texture from '../assets/text_texture_3.webp';
-// import Roof_Texture from '../assets/roofTexture.png';
+import Text_Texture from '../assets/text_texture_11.jpg';
 
 const FogAndLights = () => {
     const { scene } = useThree();
@@ -29,7 +28,7 @@ const FogAndLights = () => {
         <>
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -38,7 +37,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -47,7 +46,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -56,7 +55,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -65,7 +64,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -74,7 +73,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -83,7 +82,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -92,7 +91,7 @@ const FogAndLights = () => {
             />
             <spotLight
                 castShadow={false}
-                angle={0.78}
+                angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
@@ -161,9 +160,9 @@ const Exhibtion3DText = () => {
                 <textGeometry attach="geometry" args={['EXHIBITION 2021', textOptions]} />
                 <MeshWobbleMaterial
                     attach="material"
+                    map={texture}
                     metalness={0.4}
                     roughness={0.05}
-                    map={texture}
                     factor={0.125 / 1.5}
                 />
             </mesh>

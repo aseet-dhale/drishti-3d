@@ -2,7 +2,6 @@ import { useState } from 'react';
 import './App.css';
 import CompModel from './components/CompModel';
 import ErrorBoundary from './components/ErrorBoundary';
-import ESC_SVG from './assets/Instructions-ESC.svg';
 import { isMobile } from 'react-device-detect';
 
 const Baked_1 = "Baked_1";
@@ -28,13 +27,14 @@ function App() {
     <>
       <div id="landing-main">
         <div id="landing-head">
-          <p>Drishti Exhibition 2021</p>
+          <div id="landing-head-drishti">drishti</div>
+          <div id="landing-head-exhb">EXHIBTION 2021</div>
         </div>
         <div id="landing-button">
-          <button onClick={() => { selectModel(Baked_1); closeLanding(); }} >Baked 1</button>
-          <button onClick={() => { selectModel(Baked_2); closeLanding(); }} >Baked 2</button>
-          <button onClick={() => { selectModel(Baked_3); closeLanding(); }} >Baked 3</button>
-          <button onClick={() => { selectModel(Baked_4); closeLanding(); }} >Baked 4</button>
+          <button onClick={() => { selectModel(Baked_1); closeLanding(); }} >Room 1</button>
+          <button onClick={() => { selectModel(Baked_2); closeLanding(); }} >Room 2</button>
+          <button onClick={() => { selectModel(Baked_3); closeLanding(); }} >Room 3</button>
+          <button onClick={() => { selectModel(Baked_4); closeLanding(); }} >Room 4</button>
         </div>
         <div id="landing-instructions">
           {isMobile ? (<div>
@@ -53,12 +53,31 @@ function App() {
       <div id="landing-toggle" onClick={openLanding}>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z" /></svg>
       </div>
-      <div id="desktop-esc">
-        <div>
-          <img alt="" src={ESC_SVG} />
-          <span>
-            Press ESC to Exit the Room
-          </span>
+      <div id="parent-container">
+        <div className="child-container-helper">
+          <div className="grand-child-helper">
+            <span className="helper-icons">ESC</span>
+            <span className="helper-text-small">Press ESC to Exit</span>
+          </div>
+          <div className="grand-child-helper">
+            <span className="helper-icons">R</span>
+            <span className="helper-text-small">Press R to Reset Camera</span>
+          </div>
+        </div>
+        <div className="child-container-movement">
+        <div className="grand-child-movement">
+            <span className="movement-text-small">Movement Controls</span>
+        </div>
+          <div className="grand-child-movement">
+            <span className="movement-keys">Q</span>
+            <span className="movement-keys">W</span>
+            <span className="movement-keys">E</span>
+          </div>
+          <div className="grand-child-movement">
+            <span className="movement-keys">A</span>
+            <span className="movement-keys">S</span>
+            <span className="movement-keys">D</span>
+          </div>
         </div>
       </div>
       {isMobile ? (
