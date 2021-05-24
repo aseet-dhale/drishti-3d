@@ -55,7 +55,7 @@
   padding: 10px;
   width: 120px;
   border: none;
-  font-family: 'Heebo', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   color: var(--theme_color);
   /* border-radius: 50px; */
   background: #000000;
@@ -91,7 +91,6 @@
 
 #landing-button button:hover {
   border: 2px solid #fff59d;
-  margin: 13px;
 }
 
 #landing-toggle {
@@ -119,6 +118,34 @@
   justify-content: space-between;
   width: 100%;
   color: white;
+}
+
+#music-controls {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 5px;
+  z-index: 11;
+}
+
+#music-controls button {
+  display: inline-flex;
+  align-items: center;
+  padding: 1em;
+  height: 50px;
+  font-size: smaller;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.25);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px; 
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#music-controls svg {
+  margin: 10px;
+  fill: #ffffff;
+  width: 20px;
 }
 
 .movement-text-small {

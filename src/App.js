@@ -1,16 +1,30 @@
-import { useState } from 'react';
-import './App.css';
+import React, { useState } from 'react';
 import CompModel from './components/CompModel';
 import ErrorBoundary from './components/ErrorBoundary';
 import { isMobile } from 'react-device-detect';
+import { Howl, Howler } from 'howler';
+import bg from './assets/bg/bg.webm';
+import './App.css';
 
-const Baked_1 = "Baked_1";
-const Baked_2 = "Baked_2";
-const Baked_3 = "Baked_3";
-const Baked_4 = "Baked_4";
+const sound = new Howl({
+  src: bg,
+  html5: true,
+  loop: true,
+});
+
+Howler.volume(0.05);
+
+const Room_1 = "Room_1";
+const Room_2 = "Room_2";
+const Room_3 = "Room_3";
+const Room_4 = "Room_4";
+
+const playSound = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm13.008 2.093c.742.743 1.2 1.77 1.198 2.903-.002 1.133-.462 2.158-1.205 2.9l1.219 1.223c1.057-1.053 1.712-2.511 1.715-4.121.002-1.611-.648-3.068-1.702-4.125l-1.225 1.22zm2.142-2.135c1.288 1.292 2.082 3.073 2.079 5.041s-.804 3.75-2.096 5.039l1.25 1.254c1.612-1.608 2.613-3.834 2.616-6.291.005-2.457-.986-4.681-2.595-6.293l-1.254 1.25z" /></svg>);
+const pauseSound = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm17.324 4.993l1.646-1.659-1.324-1.324-1.651 1.67-1.665-1.648-1.316 1.318 1.67 1.657-1.65 1.669 1.318 1.317 1.658-1.672 1.666 1.653 1.324-1.325-1.676-1.656z" /></svg>);
 
 function App() {
-  const [model, selectModel] = useState(Baked_1);
+  const [model, selectModel] = useState(Room_1);
+  const [soundState, setSoundState] = useState(false);
   const closeLanding = () => {
     const close = document.getElementById("landing-main");
     const open = document.getElementById("landing-toggle");
@@ -23,6 +37,16 @@ function App() {
     close.style.display = "flex";
     open.style.display = "none";
   }
+
+  const soundPlayback = () => {
+    if (!soundState) {
+      sound.play();
+    } else {
+      sound.pause();
+    }
+    setSoundState(!soundState);
+  }
+
   return (
     <>
       <div id="landing-main">
@@ -31,10 +55,10 @@ function App() {
           <div id="landing-head-exhb">EXHIBTION 2021</div>
         </div>
         <div id="landing-button">
-          <button onClick={() => { selectModel(Baked_1); closeLanding(); }} >Room 1</button>
-          <button onClick={() => { selectModel(Baked_2); closeLanding(); }} >Room 2</button>
-          <button onClick={() => { selectModel(Baked_3); closeLanding(); }} >Room 3</button>
-          <button onClick={() => { selectModel(Baked_4); closeLanding(); }} >Room 4</button>
+          <button onClick={() => { selectModel(Room_1); closeLanding(); }} >Room 1</button>
+          <button onClick={() => { selectModel(Room_2); closeLanding(); }} >Room 2</button>
+          <button onClick={() => { selectModel(Room_3); closeLanding(); }} >Room 3</button>
+          <button onClick={() => { selectModel(Room_4); closeLanding(); }} >Room 4</button>
         </div>
         <div id="landing-instructions">
           {isMobile ? (<div>
@@ -65,9 +89,9 @@ function App() {
           </div>
         </div>
         <div className="child-container-movement">
-        <div className="grand-child-movement">
+          <div className="grand-child-movement">
             <span className="movement-text-small">Movement Controls</span>
-        </div>
+          </div>
           <div className="grand-child-movement">
             <span className="movement-keys">Q</span>
             <span className="movement-keys">W</span>
@@ -79,6 +103,9 @@ function App() {
             <span className="movement-keys">D</span>
           </div>
         </div>
+      </div>
+      <div id="music-controls" onClick={() => { soundPlayback(!soundState); }}>
+        <button>{soundState ? "Pause Sound" : "Play Sound"}{soundState ? pauseSound : playSound}</button>
       </div>
       {isMobile ? (
         <div id="mobile-controls">

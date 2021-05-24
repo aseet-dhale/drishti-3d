@@ -1,17 +1,17 @@
 import React from "react";
 import ErrorBoundary from "./ErrorBoundary";
-const BAKED_1 = React.lazy(() => import('./Models/Baked_1.js'));
-const BAKED_2 = React.lazy(() => import('./Models/Baked_2.js'));
-const BAKED_3 = React.lazy(() => import('./Models/Baked_3.js'));
-const BAKED_4 = React.lazy(() => import('./Models/Baked_4.js'));
-// const Robot = React.lazy(() => import('./Models/TEST_1.js'));
+const ROOM_1 = React.lazy(() => import('./Models/Room_1.js'));
+const ROOM_2 = React.lazy(() => import('./Models/Room_2.js'));
+const ROOM_3 = React.lazy(() => import('./Models/Room_3.js'));
+const ROOM_4 = React.lazy(() => import('./Models/Room_4.js'));
+const ROBOT = React.lazy(() => import('./Models/Robot_final.js'));
 
 const Asset = (props) => {
     let out = null;
-    if (props.model === "Baked_1") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_1 /></mesh>;
-    else if (props.model === "Baked_2") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_2 /></mesh>;
-    else if (props.model === "Baked_3") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_3 /></mesh>;
-    else if (props.model === "Baked_4") out = <mesh name={props.model} scale={[0.085, 0.085, 0.085]}><BAKED_4 /></mesh>;
+    if (props.model === "Room_1") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_1 /></mesh>;
+    else if (props.model === "Room_2") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_2 /></mesh>;
+    else if (props.model === "Room_3") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_3 /></mesh>;
+    else if (props.model === "Room_4") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_4 /></mesh>;
     return out;
 }
 
@@ -21,12 +21,16 @@ export default function LoadModel(props) {
             <ErrorBoundary>
                 <Asset model={props.model} />
             </ErrorBoundary>
-            {/* <mesh position={[-3.3,0,0]} scale={[0.25,0.25,0.25]}>
-                <Robot />
-            </mesh>
-            <mesh position={[3.3,0,0]} scale={[0.25,0.25,0.25]}>
-                <Robot />
-            </mesh> */}
+            {props.model === "Room_4" ? (
+                <group>
+                    <mesh position={[-3.25, 0, 1]}>
+                        <ROBOT />
+                    </mesh>
+                    <mesh position={[ 3.25, 0, 1]}>
+                        <ROBOT />
+                    </mesh>
+                </group>
+            ) : (null)}
         </React.Suspense>
     );
 }

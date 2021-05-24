@@ -26,13 +26,14 @@ const FogAndLights = () => {
 
     return (
         <>
+            <ambientLight intensity={0.5}/>
             <spotLight
                 castShadow={false}
                 angle={0.81}
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[3, 2, 3]}
             />
             <spotLight
@@ -41,7 +42,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[-3, 2, 3]}
             />
             <spotLight
@@ -50,7 +51,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[3, 2, -3]}
             />
             <spotLight
@@ -59,7 +60,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[-3, 2, -3]}
             />
             <spotLight
@@ -68,7 +69,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[0, 2, 3]}
             />
             <spotLight
@@ -77,7 +78,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[0, 2, -3]}
             />
             <spotLight
@@ -86,7 +87,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[3, 2, 0]}
             />
             <spotLight
@@ -95,7 +96,7 @@ const FogAndLights = () => {
                 penumbra={0.05}
                 distance={10}
                 intensity={1.5}
-                decay={2}
+                decay={1}
                 position={[-3, 2, 0]}
             />
             <pointLight
@@ -109,10 +110,10 @@ const FogAndLights = () => {
 const FloorPlane = () => {
     return (
         <mesh castShadow={false} receiveShadow={false} position={[0, 0.0001, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-            <planeGeometry args={[17, 17, 32]} />
+            <planeGeometry args={[8.2*2, 10.2*2, 32]} />
             <meshPhongMaterial
-                attach="material"
-                color={0x555555}
+                attach="material"   
+                color={0x232323}
                 dithering={true}
             />
         </mesh>
