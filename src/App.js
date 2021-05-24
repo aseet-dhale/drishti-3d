@@ -12,7 +12,7 @@ const sound = new Howl({
   loop: true,
 });
 
-Howler.volume(0.05);
+Howler.volume(0.25);
 
 const Room_1 = "Room_1";
 const Room_2 = "Room_2";
@@ -37,6 +37,7 @@ function App() {
     close.style.display = "flex";
     open.style.display = "none";
   }
+
 
   const soundPlayback = () => {
     if (!soundState) {
