@@ -1,13 +1,18 @@
 import React from "react";
 import ErrorBoundary from "./ErrorBoundary";
-const AB_2 = React.lazy(() => import('../assets/AB_2.js'));
-const AB_3 = React.lazy(() => import('../assets/AB_3.js'));
-const TEST_3 = React.lazy(() => import('../assets/TEST_3.js'));
+const ROOM_1 = React.lazy(() => import('./Models/Room_1.js'));
+const ROOM_2 = React.lazy(() => import('./Models/Room_2.js'));
+const ROOM_3 = React.lazy(() => import('./Models/Room_3.js'));
+const ROOM_4 = React.lazy(() => import('./Models/Room_4.js'));
+const ROBOT = React.lazy(() => import('./Models/Robot_final.js'));
 
 const Asset = (props) => {
-    if (props.model === "AB_2") return <AB_2 />;
-    else if (props.model === "AB_3") return <AB_3 />;
-    else if (props.model === "TEST_3") return <TEST_3 />;
+    let out = null;
+    if (props.model === "Room_1") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_1 /></mesh>;
+    else if (props.model === "Room_2") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_2 /></mesh>;
+    else if (props.model === "Room_3") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_3 /></mesh>;
+    else if (props.model === "Room_4") out = <mesh scale={[1, 0.65, 1]} name={props.model}><ROOM_4 /></mesh>;
+    return out;
 }
 
 export default function LoadModel(props) {
@@ -16,6 +21,16 @@ export default function LoadModel(props) {
             <ErrorBoundary>
                 <Asset model={props.model} />
             </ErrorBoundary>
+            {props.model === "Room_4" ? (
+                <group>
+                    <mesh position={[-3.25, 0, 1]}>
+                        <ROBOT />
+                    </mesh>
+                    <mesh position={[ 3.25, 0, 1]}>
+                        <ROBOT />
+                    </mesh>
+                </group>
+            ) : (null)}
         </React.Suspense>
     );
 }
