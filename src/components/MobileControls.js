@@ -51,7 +51,6 @@ export default function MobileControls(props) {
     }
 
     useEffect(() => {
-        console.log(ref);
         if (loadedModel && loadedModel !== props.model) {
             camera.position.set(0,1.21,6.5);
             ref.current.target.y = 1.21;

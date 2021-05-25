@@ -4,6 +4,10 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { isMobile } from 'react-device-detect';
 import { Howl, Howler } from 'howler';
 import bg from './assets/bg/bg.webm';
+import left_gif from './assets/instructions/left-min.gif';
+import right_gif from './assets/instructions/right-min.gif';
+import up_gif from './assets/instructions/up-min.gif';
+import down_gif from './assets/instructions/down-min.gif';
 import './App.css';
 
 const sound = new Howl({
@@ -21,6 +25,8 @@ const Room_4 = "Room_4";
 
 const playSound = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm13.008 2.093c.742.743 1.2 1.77 1.198 2.903-.002 1.133-.462 2.158-1.205 2.9l1.219 1.223c1.057-1.053 1.712-2.511 1.715-4.121.002-1.611-.648-3.068-1.702-4.125l-1.225 1.22zm2.142-2.135c1.288 1.292 2.082 3.073 2.079 5.041s-.804 3.75-2.096 5.039l1.25 1.254c1.612-1.608 2.613-3.834 2.616-6.291.005-2.457-.986-4.681-2.595-6.293l-1.254 1.25z" /></svg>);
 const pauseSound = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M3 9v6h-1v-6h1zm13-7l-9 5v2.288l7-3.889v13.202l-7-3.889v2.288l9 5v-20zm-11 5h-5v10h5v-10zm17.324 4.993l1.646-1.659-1.324-1.324-1.651 1.67-1.665-1.648-1.316 1.318 1.67 1.657-1.65 1.669 1.318 1.317 1.658-1.672 1.666 1.653 1.324-1.325-1.676-1.656z" /></svg>);
+const instruction = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 18h-2v-8h2v8zm-1-12.25c.69 0 1.25.56 1.25 1.25s-.56 1.25-1.25 1.25-1.25-.56-1.25-1.25.56-1.25 1.25-1.25z" /></svg>);
+const cross = (<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z" /></svg>);
 
 function App() {
   const [model, selectModel] = useState(Room_1);
@@ -38,7 +44,6 @@ function App() {
     open.style.display = "none";
   }
 
-
   const soundPlayback = () => {
     if (!soundState) {
       sound.play();
@@ -46,6 +51,15 @@ function App() {
       sound.pause();
     }
     setSoundState(!soundState);
+  }
+
+  const instruction_open = (flag) => {
+    const myModal = document.getElementById("myModal");
+    if (flag) {
+      myModal.style.display = "flex";
+    } else {
+      myModal.style.display = "none";
+    }
   }
 
   return (
@@ -76,7 +90,7 @@ function App() {
         </div>
       </div>
       <div id="landing-toggle" onClick={openLanding}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z" /></svg>
+        {cross}
       </div>
       <div id="parent-container">
         <div className="child-container-helper">
@@ -105,27 +119,44 @@ function App() {
           </div>
         </div>
       </div>
-      <div id="music-controls" onClick={() => { soundPlayback(!soundState); }}>
-        <button>{soundState ? "Pause Sound" : "Play Sound"}{soundState ? pauseSound : playSound}</button>
+      <div id="music-controls">
+        <button id="play-button" onClick={() => { soundPlayback(!soundState); }}>{soundState ? pauseSound : playSound}</button>
+        {isMobile ? (<button id="instruction-button" onClick={() => { instruction_open(true) }}>{instruction}</button>): null}
       </div>
       {isMobile ? (
-        <div id="mobile-controls">
-          <div>
-            <button id="but_up">
-              <svg transform="rotate(-90) scale(0.65)" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" /></svg>
-            </button>
+        <>
+          <div id="mobile-controls">
+            <div>
+              <button id="but_up">
+                <svg transform="rotate(-90) scale(0.65)" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" /></svg>
+              </button>
+            </div>
+            <div>
+              <button id="but_do">
+                <svg transform="rotate(90) scale(0.65)" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" /></svg>
+              </button>
+            </div>
+            <div>
+              <button id="mob-cam-reset">
+                <span>R</span>
+              </button>
+            </div>
           </div>
-          <div>
-            <button id="but_do">
-              <svg transform="rotate(90) scale(0.65)" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fillRule="evenodd" clipRule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" /></svg>
-            </button>
+          <div id="myModal" className="modal">
+            <div>
+              <div className="modal-content">
+                <span className="modal-heading">INSTRUCTIONS</span>
+                <button onClick={() => { instruction_open(false) }} className="close-button">{cross}</button>
+              </div>
+              <div className="modal-content">
+                <div className="instructions"><img alt="" src={right_gif} /><span>Move Left</span></div>
+                <div className="instructions"><img alt="" src={left_gif} /><span>Move Right</span></div>
+                <div className="instructions"><img alt="" src={down_gif} /><span>Move Forward</span></div>
+                <div className="instructions"><img alt="" src={up_gif} /><span>Move Backward</span></div>
+              </div>
+            </div>
           </div>
-          <div>
-            <button id="mob-cam-reset">
-              <span>R</span>
-            </button>
-          </div>
-        </div>
+        </>
       ) : null}
       <div id="comp-model">
         <ErrorBoundary>
