@@ -85,7 +85,6 @@ export default function DesktopControls(props) {
 
     const resetCam = () => {
         if(ref.current){
-            console.log(ref.current);
             camera.position.set(0,1.25,6.5);
         }
     }

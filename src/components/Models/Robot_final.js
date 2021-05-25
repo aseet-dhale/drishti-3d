@@ -14,17 +14,17 @@ export default function Model(props) {
   const { nodes, materials } = useGLTF(func() + 'robot_final.glb')
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.Cylinder008.geometry} material={materials['Material.001']} />
-      <mesh geometry={nodes.Cylinder008_1.geometry} material={materials['Material.002']} />
-      <mesh geometry={nodes.Cylinder008_2.geometry} material={materials['Material.009']} />
-      <mesh geometry={nodes.Cylinder008_3.geometry} material={materials['Material.008']} />
-      <mesh geometry={nodes.Cylinder008_4.geometry} material={materials['Material.010']} />
-      <mesh geometry={nodes.Cylinder008_5.geometry} material={materials['Material.007']} />
-      <mesh geometry={nodes.Cylinder008_6.geometry} material={materials['Material.012']} />
-      <mesh geometry={nodes.Cylinder008_7.geometry} material={materials['Material.006']} />
-      <mesh geometry={nodes.Cylinder008_8.geometry} material={materials['Material.005']} />
-      <mesh geometry={nodes.Cylinder008_9.geometry} material={materials['Material.013']} />
-      <mesh geometry={nodes.Cylinder008_10.geometry} material={materials['Material.014']} />
+      <mesh castShadow geometry={nodes.Cylinder008.geometry} material={materials['Material.001']} />
+      <mesh castShadow geometry={nodes.Cylinder008_1.geometry} material={materials['Material.002']} />
+      <mesh castShadow geometry={nodes.Cylinder008_2.geometry} material={materials['Material.009']} />
+      <mesh castShadow geometry={nodes.Cylinder008_3.geometry} material={materials['Material.008']} />
+      <mesh castShadow geometry={nodes.Cylinder008_4.geometry} material={materials['Material.010']} />
+      <mesh castShadow geometry={nodes.Cylinder008_5.geometry} material={materials['Material.007']} />
+      <mesh castShadow geometry={nodes.Cylinder008_6.geometry} material={materials['Material.012']} />
+      <mesh castShadow geometry={nodes.Cylinder008_7.geometry} material={materials['Material.006']} />
+      <mesh castShadow geometry={nodes.Cylinder008_8.geometry} material={materials['Material.005']} />
+      <mesh castShadow geometry={nodes.Cylinder008_9.geometry} material={materials['Material.013']} />
+      <mesh castShadow geometry={nodes.Cylinder008_10.geometry} material={materials['Material.014']} />
     </group>
   )
 }

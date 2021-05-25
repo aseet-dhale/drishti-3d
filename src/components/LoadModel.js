@@ -23,10 +23,10 @@ export default function LoadModel(props) {
             </ErrorBoundary>
             {props.model === "Room_4" ? (
                 <group>
-                    <mesh position={[-3.25, 0, 1]}>
+                    <mesh position={[-3, 0, 1]}>
                         <ROBOT />
                     </mesh>
-                    <mesh position={[ 3.25, 0, 1]}>
+                    <mesh position={[ 3, 0, 1]}>
                         <ROBOT />
                     </mesh>
                 </group>
