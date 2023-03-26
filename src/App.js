@@ -67,7 +67,7 @@ function App() {
       <div id="landing-main">
         <div id="landing-head">
           <div id="landing-head-drishti">drishti</div>
-          <div id="landing-head-exhb">EXHIBTION 2021</div>
+          <div id="landing-head-exhb">EXHIBTION 2023</div>
         </div>
         <div id="landing-button">
           <button onClick={() => { selectModel(Room_1); closeLanding(); }} >Room 1</button>
